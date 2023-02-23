@@ -1,0 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.head {
+  background-color: darkcyan;
+}
+
+.middle {
+  background-color: antiquewhite;
+}
+
+.foot {
+  display: flex;
+  flex-direction: row;
+  background-color: darkcyan;
+}
