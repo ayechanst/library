@@ -38,6 +38,7 @@ img {
 
 .display {
   grid-column: 4 / span 2;
+  border: 3px solid darkcyan;
 }
 
 .foot {
