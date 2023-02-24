@@ -2,18 +2,28 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+body > section {
+  display: grid;
 }
 
 .head {
   background-color: darkcyan;
+  color: antiquewhite;
+  padding-left: 40px;
 }
 
 .middle {
   background-color: antiquewhite;
+  flex-basis: 450px;
 }
 
 .foot {
-  display: flex;
-  flex-direction: row;
   background-color: darkcyan;
+  grid-template-columns: repeat(4, 1fr);
 }
