@@ -12,6 +12,19 @@ body > section {
   display: grid;
 }
 
+img {
+  height: 200px;
+  width: auto;
+}
+
+.middle > div {
+  border: 2px soldid darkcyan;
+}
+
+.text {
+  padding: 5px;
+}
+
 .head {
   background-color: darkcyan;
   color: antiquewhite;
@@ -21,6 +34,10 @@ body > section {
 .middle {
   background-color: antiquewhite;
   flex-basis: 450px;
+  display: grid;
+  padding: 10px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .foot {
