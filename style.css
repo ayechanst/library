@@ -17,12 +17,8 @@ img {
   width: auto;
 }
 
-.middle > div {
-  border: 2px soldid darkcyan;
-}
-
 .text {
-  padding: 5px;
+  padding: 10px;
 }
 
 .head {
@@ -38,6 +34,10 @@ img {
   padding: 10px;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(5, 1fr);
+}
+
+.display {
+  grid-column: 4 / span 2;
 }
 
 .foot {
