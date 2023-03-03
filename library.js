@@ -1,5 +1,6 @@
 const button = document.getElementById('button');
 const form = document.getElementById('form');
+const removeBtn = document.getElementById('removeBtn');
 
 const library = [{ title: 'Moby Cock', author: 'Herman Melville', pages: 427 }];
 
@@ -22,9 +23,14 @@ function makeBook(book) {
   bookDiv.appendChild(bookPages);
   // done book pages
   const removeButton = document.createElement('button');
-  removeButton.innerHTML('remove');
-  bookDiv.appendChild(removeButton); // add the functionality
+  removeButton.innerHTML = 'remove';
+  removeButton.setAttribute('id', 'removeBtn');
+  bookDiv.appendChild(removeButton);
   // done remove button
+  const readStatusButton = document.createElement('button');
+  readStatusButton.innerHTML = 'to read';
+  bookDiv.appendChild(readStatusButton);
+  // done to read/done reading button
   bookDiv.classList.add('book');
   bookShelf.appendChild(bookDiv);
 }
@@ -54,10 +60,11 @@ button.addEventListener('click', (event) => {
   console.log(pagesInput);
 });
 
-// make a thing that makes a card
+removeBtn.addEventListener('click', () => {
+  // get the book name to target the deletion
 
-// make a thing that creates sends the card to the html
-// use the elemnt
-
+  const bookToRemove = document.getElementById();
+  bookToRemove.remove();
+});
 // eslint-disable-next-line no-console
 console.log(library);
