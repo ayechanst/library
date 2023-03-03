@@ -1,31 +1,31 @@
 const button = document.getElementById('button');
+const form = document.getElementById('form');
 
-const library = [
-  { title: 'Moby Cock', author: 'Bobby Bob', pages: 420 },
-  { title: 'Tom Sawyer', author: 'Mark Twain', pages: 432343 },
-  { title: 'Beyond Good and Evil', author: 'Nichze', pages: 2 },
-];
+const library = [{ title: 'Moby Cock', author: 'Herman Melville', pages: 427 }];
 
 function makeBook(book) {
-  // make this function set innerHTML to the correct book values (only make one book a time)
   const bookShelf = document.getElementById('bookshelf');
   const bookDiv = document.createElement('div');
-  // set the id to the value of the title
-  let bookTitle = document.createElement('p');
-  bookTitle = book.title;
+  const bookTitle = document.createElement('p');
+  bookTitle.classList.add('title');
   bookTitle.innerHTML = book.title;
   bookDiv.appendChild(bookTitle);
   // done book title
-  let bookAuthor = document.createElement('p');
-  bookAuthor = book.author;
+  const bookAuthor = document.createElement('p');
+  bookAuthor.classList.add('author');
   bookAuthor.innerHTML = book.author;
   bookDiv.appendChild(bookAuthor);
   // done book author
-  let bookPages = document.createElement('p');
-  bookPages = book.author;
+  const bookPages = document.createElement('p');
+  bookPages.classList.add('pages');
   bookPages.innerHTML = book.pages;
   bookDiv.appendChild(bookPages);
   // done book pages
+  const removeButton = document.createElement('button');
+  removeButton.innerHTML('remove');
+  bookDiv.appendChild(removeButton); // add the functionality
+  // done remove button
+  bookDiv.classList.add('book');
   bookShelf.appendChild(bookDiv);
 }
 
@@ -47,10 +47,8 @@ button.addEventListener('click', (event) => {
   const pagesInput = document.getElementById('pages').value;
   const book = new Book(titleInput, authorInput, pagesInput);
   library.push(book);
-  library.forEach((item) => {
-    makeBook(item);
-  });
-  makeBook(book);
+  makeBook(library[library.length - 1]);
+  form.reset();
   console.log(authorInput);
   console.log(pagesInput);
   console.log(pagesInput);
