@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="library.js"></script>
+    <script src="library.js" defer></script>
   </head>
   <body>
     <section class="head">
@@ -25,14 +25,14 @@
         <img src="/images/secretary.jpg" alt="woman with glasses" />
       </div>
       <div class="wrapper text">
-        <form action="./library.js" method="get" id="form">
+        <form id="form">
           <label for="title">Title</label>
           <input type="text" name="title" id="title" />
           <label for="author">Author</label>
           <input type="text" name="author" id="author" />
           <label for="pages">Number of Pages</label>
           <input type="number" name="pages" id="pages" />
-          <button>submit</button>
+          <button id="button">submit</button>
         </form>
       </div>
       <div class="img"><img src="/images/two-guys.jpg" alt="two guys" /></div>
@@ -49,7 +49,7 @@
         <img src="/images/woman-leaning.jpg" alt="woman reading a book" />
       </div>
       <div class="wrapper text display">
-        <div></div>
+        <div id="bookshelf"></div>
       </div>
     </section>
     <section class="foot">
