@@ -2,10 +2,12 @@ const button = document.getElementById('button');
 const form = document.getElementById('form');
 const removeBtn = document.getElementById('removeBtn');
 
-const library = [{ title: 'Moby Cock', author: 'Herman Melville', pages: 427 }];
+const library = [];
 
 function makeBook(book) {
   const bookShelf = document.getElementById('bookshelf');
+  const bookContainer = document.createElement('div');
+  bookContainer.classList.add('container');
   const bookDiv = document.createElement('div');
   const bookTitle = document.createElement('p');
   bookTitle.classList.add('title');
@@ -24,20 +26,31 @@ function makeBook(book) {
   // done book pages
   const removeButton = document.createElement('button');
   removeButton.innerHTML = 'remove';
-  removeButton.setAttribute('id', 'removeBtn');
+  removeButton.addEventListener('click', () => {
+    bookDiv.remove();
+  });
   bookDiv.appendChild(removeButton);
   // done remove button
   const readStatusButton = document.createElement('button');
-  readStatusButton.innerHTML = 'to read';
+  readStatusButton.classList.add('button');
+  readStatusButton.innerHTML = 'not read';
   bookDiv.appendChild(readStatusButton);
+  readStatusButton.addEventListener('click', () => {
+    if (readStatusButton.innerHTML === 'read') {
+      readStatusButton.innerHTML = 'not read';
+    } else {
+      readStatusButton.innerHTML = 'read';
+    }
+  });
   // done to read/done reading button
   bookDiv.classList.add('book');
-  bookShelf.appendChild(bookDiv);
+  bookDiv.setAttribute('id', `idNum${library.length}`);
+  bookContainer.appendChild(bookDiv);
+  bookShelf.appendChild(bookContainer);
 }
 
 class Book {
   constructor(title, author, pages) {
-    // this makes the object thats it
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -60,11 +73,6 @@ button.addEventListener('click', (event) => {
   console.log(pagesInput);
 });
 
-removeBtn.addEventListener('click', () => {
-  // get the book name to target the deletion
-
-  const bookToRemove = document.getElementById();
-  bookToRemove.remove();
-});
 // eslint-disable-next-line no-console
 console.log(library);
+``;
