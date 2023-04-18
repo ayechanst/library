@@ -68,9 +68,6 @@ button.addEventListener('click', (event) => {
   library.push(book);
   makeBook(library[library.length - 1]);
   form.reset();
-  console.log(authorInput);
-  console.log(pagesInput);
-  console.log(pagesInput);
 });
 
 // eslint-disable-next-line no-console
